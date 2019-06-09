@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     let player = SKSpriteNode(imageNamed: "player")
     
-    let wrenchSound = SKAction.playSoundFileNamed("wrenchSoundEffect.wav", waitForCompletion: false)
+    //let wrenchSound = SKAction.playSoundFileNamed("wrenchSoundEffect.wav", waitForCompletion: false)
     
     override func didMove(to view: SKView) {
         
@@ -42,7 +42,7 @@ class GameScene: SKScene {
     
         let moveWrench = SKAction.moveTo(y: self.size.height + wrench.size.height, duration: 1)
         let deleteWrench = SKAction.removeFromParent()
-        let wrenchSequence = SKAction.sequence([wrenchSound,moveWrench,deleteWrench])
+        let wrenchSequence = SKAction.sequence([moveWrench,deleteWrench])
         
         wrench.run(wrenchSequence)
     }
