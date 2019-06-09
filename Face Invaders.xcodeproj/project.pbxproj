@@ -17,6 +17,9 @@
 		F07E3DAE22AD5A1600925FF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F07E3DAC22AD5A1600925FF4 /* LaunchScreen.storyboard */; };
 		F07E3DB922AD5A1600925FF4 /* Face_InvadersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E3DB822AD5A1600925FF4 /* Face_InvadersTests.swift */; };
 		F07E3DC422AD5A1600925FF4 /* Face_InvadersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E3DC322AD5A1600925FF4 /* Face_InvadersUITests.swift */; };
+		F07E3DD222ADB3EA00925FF4 /* wrenchSoundEffect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F07E3DD122ADB3EA00925FF4 /* wrenchSoundEffect.m4a */; };
+		F07E3DD322ADB3EA00925FF4 /* wrenchSoundEffect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F07E3DD122ADB3EA00925FF4 /* wrenchSoundEffect.m4a */; };
+		F07E3DD422ADB3EA00925FF4 /* wrenchSoundEffect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F07E3DD122ADB3EA00925FF4 /* wrenchSoundEffect.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 		F07E3DBF22AD5A1600925FF4 /* Face InvadersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Face InvadersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07E3DC322AD5A1600925FF4 /* Face_InvadersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face_InvadersUITests.swift; sourceTree = "<group>"; };
 		F07E3DC522AD5A1600925FF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F07E3DD122ADB3EA00925FF4 /* wrenchSoundEffect.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = wrenchSoundEffect.m4a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				F07E3DA522AD5A1300925FF4 /* GameViewController.swift */,
 				F07E3DA722AD5A1300925FF4 /* Main.storyboard */,
 				F07E3DAA22AD5A1600925FF4 /* Assets.xcassets */,
+				F07E3DD122ADB3EA00925FF4 /* wrenchSoundEffect.m4a */,
 				F07E3DAC22AD5A1600925FF4 /* LaunchScreen.storyboard */,
 				F07E3DAF22AD5A1600925FF4 /* Info.plist */,
 			);
@@ -240,6 +245,7 @@
 			files = (
 				F07E3DA922AD5A1300925FF4 /* Main.storyboard in Resources */,
 				F07E3DA022AD5A1200925FF4 /* GameScene.sks in Resources */,
+				F07E3DD222ADB3EA00925FF4 /* wrenchSoundEffect.m4a in Resources */,
 				F07E3DAB22AD5A1600925FF4 /* Assets.xcassets in Resources */,
 				F07E3DAE22AD5A1600925FF4 /* LaunchScreen.storyboard in Resources */,
 				F07E3DA222AD5A1200925FF4 /* Actions.sks in Resources */,
@@ -250,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F07E3DD322ADB3EA00925FF4 /* wrenchSoundEffect.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F07E3DD422ADB3EA00925FF4 /* wrenchSoundEffect.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

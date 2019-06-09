@@ -13,7 +13,7 @@ class GameScene: SKScene {
     
     let player = SKSpriteNode(imageNamed: "player")
     
-    //let wrenchSound = SKAction.playSoundFileNamed("wrenchSoundEffect.wav", waitForCompletion: false)
+    let wrenchSound = SKAction.playSoundFileNamed("wrenchSoundEffect.m4a", waitForCompletion: false)
     
     override func didMove(to view: SKView) {
         
@@ -23,10 +23,10 @@ class GameScene: SKScene {
         background.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         background.zPosition = 0
         self.addChild(background)
+
         
         
-        
-        player.setScale(0.5)
+        player.setScale(0.4)
         player.position = CGPoint(x: self.size.width/2, y: self.size.height * 0.2)
         player.zPosition = 2
         self.addChild(player)
@@ -42,13 +42,24 @@ class GameScene: SKScene {
     
         let moveWrench = SKAction.moveTo(y: self.size.height + wrench.size.height, duration: 1)
         let deleteWrench = SKAction.removeFromParent()
-        let wrenchSequence = SKAction.sequence([moveWrench,deleteWrench])
+        let wrenchSequence = SKAction.sequence([wrenchSound,moveWrench,deleteWrench])
         
         wrench.run(wrenchSequence)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         throwWrench()
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch: AnyObject in touches {
+            let pointOfTouch = touch.location(in: self)
+            let previousPointOfTouch = touch.previousLocation(in: self)
+            
+            let amountDragged = pointOfTouch.x - previousPointOfTouch.x
+            
+            player.position.x += amountDragged
+        }
     }
     
 }
