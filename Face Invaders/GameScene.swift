@@ -41,7 +41,7 @@ class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
         
-        let background = SKSpriteNode(imageNamed: "background_black")
+        let background = SKSpriteNode(imageNamed: "background_blue")
         background.size = self.size
         background.position = CGPoint(x: self.size.width/2, y: self.size.height/2)
         background.zPosition = 0
@@ -52,6 +52,8 @@ class GameScene: SKScene {
         player.zPosition = 2
         self.addChild(player)
     }
+    
+
     
     func throwWrench() {
         let wrench = SKSpriteNode(imageNamed: "wrench")
@@ -70,19 +72,31 @@ class GameScene: SKScene {
     func spawnEnemy() {
         let randomXStart = random(min: gameArea.minX, max: gameArea.maxX)
         let randomXEnd = random(min: gameArea.minX, max: gameArea.maxX)
-        
+
         let startPoint = CGPoint(x: randomXStart, y: self.size.height * 1.2)
         let endPoint = CGPoint(x: randomXEnd, y: -self.size.height * 0.2)
     
         let enemy = SKSpriteNode(imageNamed: "enemy")
-        enemy.setScale(1)
+        enemy.setScale(0.75)
         enemy.position = startPoint
         enemy.zPosition = 2
         self.addChild(enemy)
+    
+        let moveEnemy = SKAction.move(to: endPoint, duration: 1.5)
+        let deleteEnemy = SKAction.removeFromParent()
+        let enemySequence = SKAction.sequence([moveEnemy,deleteEnemy])
+        enemy.run(enemySequence)
+        
+        let dx = endPoint.x - startPoint.x
+        let dy = endPoint.y - startPoint.y
+        let amountToRotate = atan2(dy, dx)
+        enemy.zRotation = amountToRotate
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         throwWrench()
+        spawnEnemy()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
