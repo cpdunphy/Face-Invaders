@@ -15,8 +15,31 @@ class GameScene: SKScene {
     
     let wrenchSound = SKAction.playSoundFileNamed("wrenchSoundEffect.m4a", waitForCompletion: false)
     
-    override func didMove(to view: SKView) {
+    let gameArea: CGRect
+    
+    func random() -> CGFloat {
+        return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+    }
+    
+    func random(min min: CGFloat, max: CGFloat) -> CGFloat {
+        return random() * (max - min) + min
+    }
+    
+    override init(size: CGSize) {
         
+        let maxAspectRatio: CGFloat = 16.0/9.0
+        let playableWidth = size.height / maxAspectRatio
+        let margin = (size.width - playableWidth) / 2
+        gameArea = CGRect(x: margin, y: 0, width: playableWidth, height: size.height)
+        
+        super.init(size: size)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func didMove(to view: SKView) {
         
         let background = SKSpriteNode(imageNamed: "background_black")
         background.size = self.size
@@ -24,13 +47,10 @@ class GameScene: SKScene {
         background.zPosition = 0
         self.addChild(background)
 
-        
-        
         player.setScale(0.4)
         player.position = CGPoint(x: self.size.width/2, y: self.size.height * 0.2)
         player.zPosition = 2
         self.addChild(player)
-        
     }
     
     func throwWrench() {
@@ -47,6 +67,20 @@ class GameScene: SKScene {
         wrench.run(wrenchSequence)
     }
     
+    func spawnEnemy() {
+        let randomXStart = random(min: gameArea.minX, max: gameArea.maxX)
+        let randomXEnd = random(min: gameArea.minX, max: gameArea.maxX)
+        
+        let startPoint = CGPoint(x: randomXStart, y: self.size.height * 1.2)
+        let endPoint = CGPoint(x: randomXEnd, y: -self.size.height * 0.2)
+    
+        let enemy = SKSpriteNode(imageNamed: "enemy")
+        enemy.setScale(1)
+        enemy.position = startPoint
+        enemy.zPosition = 2
+        self.addChild(enemy)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         throwWrench()
     }
@@ -59,6 +93,17 @@ class GameScene: SKScene {
             let amountDragged = pointOfTouch.x - previousPointOfTouch.x
             
             player.position.x += amountDragged
+            
+            if player.position.x <= gameArea.maxX - player.size.width, player.position.x >= gameArea.minX + player.size.width {
+                player.position.x += amountDragged
+            }
+            else if player.position.x < gameArea.minX + player.size.width {
+                player.position.x = gameArea.minX + player.size.width
+            }
+            else if player.position.x > gameArea.maxX - player.size.width {
+                player.position.x = gameArea.maxX - player.size.width
+            }
+            
         }
     }
     
