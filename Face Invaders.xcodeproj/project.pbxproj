@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F00F891222AF0E5C00B66955 /* explosionSoundEffect.m4a in Resources */ = {isa = PBXBuildFile; fileRef = F00F891122AF0E5C00B66955 /* explosionSoundEffect.m4a */; };
+		F00F891722AF356500B66955 /* Potra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F00F891622AF356500B66955 /* Potra.ttf */; };
+		F00F891922AF357600B66955 /* Aquatico-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F00F891822AF357600B66955 /* Aquatico-Regular.otf */; };
 		F07E3D9E22AD5A1200925FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E3D9D22AD5A1200925FF4 /* AppDelegate.swift */; };
 		F07E3DA222AD5A1200925FF4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F07E3DA122AD5A1200925FF4 /* Actions.sks */; };
 		F07E3DA422AD5A1300925FF4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E3DA322AD5A1200925FF4 /* GameScene.swift */; };
@@ -39,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F00F891822AF357600B66955 /* Aquatico-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aquatico-Regular.otf"; sourceTree = "<group>"; };
 		F07E3D9A22AD5A1200925FF4 /* Face Invaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Face Invaders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07E3D9D22AD5A1200925FF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07E3DA122AD5A1200925FF4 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -82,6 +86,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F00F891522AF353A00B66955 /* Sound Effects */ = {
+			isa = PBXGroup;
+			children = (
+				F07E3DD122ADB3EA00925FF4 /* wrenchSoundEffect.m4a */,
+				F00F891122AF0E5C00B66955 /* explosionSoundEffect.m4a */,
+			);
+			path = "Sound Effects";
+			sourceTree = "<group>";
+		};
+		F00F891A22AF358700B66955 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F00F891822AF357600B66955 /* Aquatico-Regular.otf */,
+				F00F891622AF356500B66955 /* Potra.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F07E3D9122AD5A1200925FF4 = {
 			isa = PBXGroup;
 			children = (
@@ -110,8 +132,9 @@
 				F07E3DA322AD5A1200925FF4 /* GameScene.swift */,
 				F07E3DA522AD5A1300925FF4 /* GameViewController.swift */,
 				F07E3DA722AD5A1300925FF4 /* Main.storyboard */,
+				F00F891A22AF358700B66955 /* Fonts */,
 				F07E3DAA22AD5A1600925FF4 /* Assets.xcassets */,
-				F07E3DD122ADB3EA00925FF4 /* wrenchSoundEffect.m4a */,
+				F00F891522AF353A00B66955 /* Sound Effects */,
 				F07E3DAC22AD5A1600925FF4 /* LaunchScreen.storyboard */,
 				F07E3DAF22AD5A1600925FF4 /* Info.plist */,
 			);
@@ -241,8 +264,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F07E3DA922AD5A1300925FF4 /* Main.storyboard in Resources */,
+				F00F891922AF357600B66955 /* Aquatico-Regular.otf in Resources */,
 				F07E3DD222ADB3EA00925FF4 /* wrenchSoundEffect.m4a in Resources */,
 				F07E3DAB22AD5A1600925FF4 /* Assets.xcassets in Resources */,
+				F00F891222AF0E5C00B66955 /* explosionSoundEffect.m4a in Resources */,
+				F00F891722AF356500B66955 /* Potra.ttf in Resources */,
 				F07E3DAE22AD5A1600925FF4 /* LaunchScreen.storyboard in Resources */,
 				F07E3DA222AD5A1200925FF4 /* Actions.sks in Resources */,
 			);
