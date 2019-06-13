@@ -11,6 +11,7 @@
 		F00F891722AF356500B66955 /* Potra.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F00F891622AF356500B66955 /* Potra.ttf */; };
 		F00F891922AF357600B66955 /* Aquatico-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F00F891822AF357600B66955 /* Aquatico-Regular.otf */; };
 		F032ADE622AFE44100BE1B5F /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F032ADE522AFE44100BE1B5F /* GameOverScene.swift */; };
+		F032AE6E22B1AF0100BE1B5F /* StatsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F032AE6D22B1AF0100BE1B5F /* StatsScene.swift */; };
 		F07E3D9E22AD5A1200925FF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E3D9D22AD5A1200925FF4 /* AppDelegate.swift */; };
 		F07E3DA222AD5A1200925FF4 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = F07E3DA122AD5A1200925FF4 /* Actions.sks */; };
 		F07E3DA422AD5A1300925FF4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E3DA322AD5A1200925FF4 /* GameScene.swift */; };
@@ -47,6 +48,7 @@
 		F00F891622AF356500B66955 /* Potra.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Potra.ttf; sourceTree = "<group>"; };
 		F00F891822AF357600B66955 /* Aquatico-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Aquatico-Regular.otf"; sourceTree = "<group>"; };
 		F032ADE522AFE44100BE1B5F /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		F032AE6D22B1AF0100BE1B5F /* StatsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsScene.swift; sourceTree = "<group>"; };
 		F07E3D9A22AD5A1200925FF4 /* Face Invaders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Face Invaders.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F07E3D9D22AD5A1200925FF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F07E3DA122AD5A1200925FF4 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		F07E3D9C22AD5A1200925FF4 /* Face Invaders */ = {
 			isa = PBXGroup;
 			children = (
+				F032AE6D22B1AF0100BE1B5F /* StatsScene.swift */,
 				F07E3D9D22AD5A1200925FF4 /* AppDelegate.swift */,
 				F07E3DA122AD5A1200925FF4 /* Actions.sks */,
 				F07E3DA322AD5A1200925FF4 /* GameScene.swift */,
@@ -305,6 +308,7 @@
 				F07E3DA422AD5A1300925FF4 /* GameScene.swift in Sources */,
 				F07E3DA622AD5A1300925FF4 /* GameViewController.swift in Sources */,
 				F032ADE622AFE44100BE1B5F /* GameOverScene.swift in Sources */,
+				F032AE6E22B1AF0100BE1B5F /* StatsScene.swift in Sources */,
 				F07E3D9E22AD5A1200925FF4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,7 +485,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 896Q68CL7P;
 				INFOPLIST_FILE = "Face Invaders/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,7 +504,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 896Q68CL7P;
 				INFOPLIST_FILE = "Face Invaders/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

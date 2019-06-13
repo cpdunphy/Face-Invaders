@@ -11,10 +11,12 @@ import GameplayKit
 
 var gameScore = 0
 var totalWrenches = 0
+var hitWrenches = 0
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: Global Variables
     //Declaring outside allows for global access
+
     let wrenchSound = SKAction.playSoundFileNamed("wrenchSoundEffect.m4a", waitForCompletion: false)
     let explosionSound = SKAction.playSoundFileNamed("explosionSoundEffect.m4a", waitForCompletion: false)
     let player = SKSpriteNode(imageNamed: "player")
@@ -54,7 +56,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: Did Move to View
     override func didMove(to view: SKView) {
         gameScore = 0
-        
+        totalWrenches = 0
+        hitWrenches = 0
         //Gives physics to the Game
         self.physicsWorld.contactDelegate = self
         
@@ -151,6 +154,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if body1.categoryBitMask == PhysicsCategories.Wrench && body2.categoryBitMask == PhysicsCategories.Enemy {
             
             addScore()
+            hitWrenches += 1
+            print("Hit Smalls = \(hitWrenches)")
             
             if body2.node != nil {
                 if body2.node!.position.y > self.size.height {
@@ -225,6 +230,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //MARK: Spawn Stuff
     func throwWrench() {
         totalWrenches += 1
+        print("Threw a wrench = \(totalWrenches)")
         let wrench = SKSpriteNode(imageNamed: "wrench")
         wrench.name = "Wrench" // Reference Name
         wrench.setScale(0.15)

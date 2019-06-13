@@ -9,10 +9,15 @@
 import Foundation
 import SpriteKit
 
+let defaults = UserDefaults()
+
+var totalWrenchNumber = defaults.integer(forKey: "thrownWrenchesSaved")
+var totalHitNumber = defaults.integer(forKey: "confrimedHitsSaved")
+
 class GameOverScene: SKScene {
     
     let restartLabel = SKLabelNode(fontNamed: "Aquatico")
-
+    let statsLabel = SKLabelNode(fontNamed: "Aquatico")
     
     override func didMove(to view: SKView) {
         let background = SKSpriteNode(imageNamed: "background_blue")
@@ -37,15 +42,16 @@ class GameOverScene: SKScene {
         scoreLabel.zPosition = 1
         self.addChild(scoreLabel)
         
-        let defaults = UserDefaults()
+//        let defaults = UserDefaults()
         
         var highScoreNumber = defaults.integer(forKey: "highScoreSaved")
-        var totalWrenchNumber = defaults.integer(forKey: "thrownWrenchesSaved")
+
+        totalWrenchNumber += totalWrenches
+        totalWrenches = 0
+        totalHitNumber += gameScore
         
-//        if totalWrenches > totalWrenchNumber {
-            totalWrenchNumber += totalWrenches
-            defaults.set(totalWrenchNumber, forKey: "thrownWrenchesSaved")
-//        }
+        defaults.set(totalWrenchNumber, forKey: "thrownWrenchesSaved")
+        defaults.set(totalHitNumber, forKey: "confrimedHitsSaved")
         
         if gameScore > highScoreNumber {
             highScoreNumber = gameScore
@@ -67,14 +73,13 @@ class GameOverScene: SKScene {
         restartLabel.zPosition = 1
         self.addChild(restartLabel)
         
-        let totalWrenchLabel = SKLabelNode(fontNamed: "Aquatico")
-        totalWrenchLabel.text = "Thrown \(totalWrenchNumber) wrenches at Mr. Small"
-        totalWrenchLabel.fontSize = 35
-        totalWrenchLabel.fontColor = SKColor.white
-        totalWrenchLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height * 0.17)
-        totalWrenchLabel.zPosition = 1
-        self.addChild(totalWrenchLabel)
-        print(totalWrenchNumber)
+        statsLabel.text = "Statistics"
+        statsLabel.fontSize = 50
+        statsLabel.fontColor = SKColor.white
+        statsLabel.position = CGPoint(x: self.size.width / 2, y: self.size.height * 0.17)
+        statsLabel.zPosition = 1
+        self.addChild(statsLabel)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -87,7 +92,15 @@ class GameOverScene: SKScene {
                 sceneToMoveTo.scaleMode = self.scaleMode
                 let transition = SKTransition.fade(withDuration: 0.5)
                 self.view!.presentScene(sceneToMoveTo, transition: transition)
+        
+            }
             
+            if statsLabel.contains(pointOfTouch) {
+                let sceneToMoveTo = StatsScene(size: self.size)
+                sceneToMoveTo.scaleMode = self.scaleMode
+                let transition = SKTransition.fade(withDuration: 0.5)
+                self.view!.presentScene(sceneToMoveTo, transition: transition)
+                
             }
 
         }
